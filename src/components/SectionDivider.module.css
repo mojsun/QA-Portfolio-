@@ -1,0 +1,60 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.base {
+  position: relative;
+  height: 2px;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: var(--accent);
+}
+
+.bar {
+  display: none;
+}
+
+.barBottom {
+  left: 0;
+  right: 10%;
+  top: 60%;
+}
+
+.barMiddle {
+  left: 18%;
+  right: 0;
+  top: 40%;
+}
+
+.barTop {
+  left: 30%;
+  right: 22%;
+  top: 20%;
+  height: 3px;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+  .base {
+    height: 2px;
+    display: flex;
+    align-items: center;
+  }
+  .bar {
+    display: none;
+  }
+  .line {
+    background: var(--accent);
+    height: 2px;
+  }
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moji Shahi — QA Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #161616;
+      --text: #f5f5f5;
+      --text-muted: #a0a0a0;
+      --accent: #e85d04;
+      --accent-soft: #ff6b1a;
+      --line: rgba(255,255,255,0.12);
+      --radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .header-left { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .site-title { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn:hover { background: var(--bg-card); border-color: var(--text-muted); }
+    .btn-primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+
+    /* Main layout: left sidebar | center photo | right nav */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 420px) 1fr;
+      min-height: calc(100vh - 65px);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+    }
+
+    /* Left: About Me */
+    .about-column {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .about-column::before {
+      content: '';
+      position: absolute;
+      left: 2rem;
+      top: 3rem;
+      bottom: 3rem;
+      width: 2px;
+      background: var(--line);
+      border-radius: 1px;
+    }
+    .about-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .about-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+    .about-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    .about-text {
+      color: var(--text-muted);
+      max-width: 320px;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .read-more {
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .read-more a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .read-more a:hover { text-decoration: underline; }
+    .read-more::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Center: Photo */
+    .photo-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .photo-frame {
+      position: relative;
+      width: min(280px, 80vw);
+      aspect-ratio: 1;
+    }
+    .photo-frame::before,
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+    }
+    .photo-frame::after {
+      inset: -16px;
+      opacity: 0.5;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Right: Navigation */
+    .nav-column {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+    }
+    .nav-column::before {
+      content: '';
+      position: absolute;
+      right: 2rem;
+      top: 3rem;
+      bottom: 3rem;
+      width: 2px;
+      background: var(--line);
+      border-radius: 1px;
+    }
+    .nav-list { list-style: none; text-align: right; }
+    .nav-list li { margin-bottom: 1.25rem; position: relative; padding-right: 1.5rem; }
+    .nav-list li::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+    .nav-list a {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-list a:hover { color: var(--accent-soft); }
+    .social-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding-right: 1.5rem;
+      justify-content: flex-end;
+    }
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-row a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Portfolio section */
+    .portfolio-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+    .portfolio-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 700px) { .portfolio-intro { grid-template-columns: 1fr; } }
+    .portfolio-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .portfolio-heading {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .portfolio-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .explore-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #f59e0b;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .explore-more:hover { text-decoration: underline; }
+
+    /* Project grid 2x2 */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+    .project-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
+    }
+    .project-card-placeholder {
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.06) 100%);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .project-card-content { padding: 1.5rem; flex: 1; }
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .project-links a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .project-links a:hover { text-decoration: underline; }
+
+    /* Footer banner */
+    .footer-banner {
+      background: rgba(22, 22, 22, 0.95);
+      border-top: 1px solid var(--line);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-banner p { color: var(--text-muted); font-size: 0.9rem; }
+    .footer-banner .btn { flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <span class="site-title">QA Portfolio</span>
+      <a href="assets/Moji-Shahi-CV.pdf" class="btn" download="Moji-Shahi-CV.pdf">Download CV</a>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="about-column" id="home">
+      <div class="about-label">About Me</div>
+      <h2 class="about-title">Hi, I'm Moji</h2>
+      <p class="about-text">
+        QA engineer focused on test automation, functionality, user experience, and strategic planning. 
+        I build and maintain UI, API, and hybrid automation frameworks with Selenium, Cypress, and Python.
+      </p>
+      <div class="read-more">
+        <a href="#portfolio">View projects →</a>
+      </div>
+    </section>
+
+    <section class="photo-column">
+      <div class="photo-frame">
+        <img src="./WhatsApp Image 2025-03-28 at 1.46.35 PM.jpeg" alt="Moji Shahi" />
+      </div>
+    </section>
+
+    <nav class="nav-column">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Social</a></li>
+      </ul>
+      <div class="social-row" id="contact">
+        <a href="https://www.linkedin.com/in/mojsun" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="mailto:moji@example.com" aria-label="Email">@</a>
+      </div>
+    </nav>
+  </main>
+
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-intro">
+      <div>
+        <div class="portfolio-label">— Portfolio</div>
+        <h2 class="portfolio-heading">Selected QA & automation projects</h2>
+        <p class="portfolio-desc">
+          End-to-end and API test automation, CI integration, and clear reporting. 
+          Each project links to the GitHub repository and includes a short overview of scope and stack.
+        </p>
+        <a href="#project-grid" class="explore-more">Explore more →</a>
+      </div>
+    </div>
+
+    <div class="project-grid" id="project-grid">
+      <article class="project-card">
+        <div class="project-card-placeholder">Cypress · UI + API + Hybrid</div>
+        <div class="project-card-content">
+          <h3>Cypress Test Automation</h3>
+          <p class="project-meta">E2E, API, Hybrid · JavaScript</p>
+          <p class="project-desc">
+            UI tests on SauceDemo, API tests on ReqRes, and hybrid tests with network interception. 
+            Custom commands, fixtures, and GitHub Actions CI.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/mojsun/cypress_test2" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-placeholder">Selenium · OrangeHRM</div>
+        <div class="project-card-content">
+          <h3>OrangeHRM UI Automation</h3>
+          <p class="project-meta">Selenium, Python, pytest</p>
+          <p class="project-desc">
+            E2E UI tests for OrangeHRM demo with Page Object Model, smoke/regression markers, 
+            HTML reports with screenshots, and Chrome/Firefox support.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/mojsun/demo.orangehrm" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-placeholder">Coming soon</div>
+        <div class="project-card-content">
+          <h3>API Testing</h3>
+          <p class="project-meta">In progress</p>
+          <p class="project-desc">
+            Dedicated API test automation project. Details and repository link will be added here soon.
+          </p>
+          <div class="project-links">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">—</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-placeholder">Coming soon</div>
+        <div class="project-card-content">
+          <h3>Selenium Project</h3>
+          <p class="project-meta">In progress</p>
+          <p class="project-desc">
+            Additional Selenium-based automation. Repository and description will be added when ready.
+          </p>
+          <div class="project-links">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">—</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer-banner">
+    <p>Moji Shahi — available for hire. QA & test automation.</p>
+    <a href="mailto:moji@example.com" class="btn">Get in touch</a>
+  </footer>
+</body>
+</html>

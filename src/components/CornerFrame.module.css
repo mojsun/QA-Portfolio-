@@ -1,0 +1,37 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cornerTopLeft,
+.cornerBottomRight {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: var(--accent);
+  border-style: solid;
+  border-width: 0;
+}
+
+.cornerTopLeft {
+  top: 36px;
+  left: 36px;
+  border-top-width: 6px;
+  border-left-width: 6px;
+}
+
+.cornerBottomRight {
+  bottom: 36px;
+  right: 36px;
+  border-bottom-width: 6px;
+  border-right-width: 6px;
+}
+
+@media (max-width: 900px) {
+  .cornerTopLeft,
+  .cornerBottomRight {
+    display: none;
+  }
+}
