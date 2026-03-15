@@ -58,12 +58,3 @@ Portfolio-QA/
 ├── index-static-backup.html   # Original single-file HTML backup
 └── README.md
 ```
-
-## Customize
-
-1. **Email** — Replace `moji@example.com` in `Hero.jsx`, `GetInTouch.jsx`, and `Footer.jsx`.
-2. **LinkedIn** — Update the LinkedIn URL in `Hero.jsx` and `Footer.jsx`.
-3. **QA projects** — Edit the `QA_PROJECTS` array in `src/components/PortfolioQA.jsx` (titles, links, descriptions).
-4. **Software projects** — Edit the `SOFTWARE_PROJECTS` array in `src/components/PortfolioSoftware.jsx`.
-5. **Photo** — Replace `public/photo.jpeg` (current copy of your WhatsApp image).
-6. **CV** — Replace `public/assets/Moji-Shahi-CV.pdf` to update the downloadable CV.
