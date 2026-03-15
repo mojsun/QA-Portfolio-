@@ -47,4 +47,23 @@ export const QA_PROJECTS = [
     imageUrl: "/screencapture-framework-reports-behave-report-html.png",
     external: null,
   },
+  {
+    id: "cucumber-js-selenium",
+    title: "Cucumber BDD Automation Framework",
+    tagline: "JavaScript • Selenium • Cucumber • POM",
+    desc: "Developed a BDD-based UI automation framework using JavaScript, Selenium WebDriver, and Cucumber. Implemented Gherkin feature files, reusable step definitions, and the Page Object Model to automate login, product search, cart, and checkout flows on a demo e-commerce site. Integrated HTML reporting, failure screenshots, and configurable headless execution for CI environments.",
+    techs: [
+      "JavaScript",
+      "Selenium WebDriver",
+      "Cucumber",
+      "BDD",
+      "Gherkin",
+      "Page Object Model",
+      "Automation Testing",
+    ],
+    github:
+      "https://github.com/mojsun/Cucumber-BDD-Automation-Framework-JavaScript-Selenium",
+    imageUrl: "/Cucumber-report-html.png",
+    external: null,
+  },
 ];
