@@ -1,21 +1,11 @@
 # QA Portfolio — Moji Shahi
 
-A React-based portfolio with a dark night-sky theme: About section, central photo with decorative rings, QA & automation projects grid, software developer projects grid, and a “Get in touch” section with a contact form.
+My React-based portfolio including About section, QA & automation projects , software developer projects , and a “Get in touch” section with a contact form.
 
 ## Tech stack
 
 - **React 18** + **Vite**
 - CSS Modules per component
-- No extra UI libraries
-
-## What’s included
-
-- **Header** — “QA Portfolio” + Download CV (no “View Portfolio” button)
-- **Hero** — About Me, photo with multiple concentric rings, nav (Home, Portfolio, Software, Get in touch), social links
-- **Portfolio (QA)** — “Selected QA & automation projects” — 4 cards (Cypress, OrangeHRM, API placeholder, Selenium placeholder)
-- **Software** — “Software developer projects” — 4 placeholder cards
-- **Get in touch** — Left: “Got a project? Let’s talk.” + email link; Right: “Estimate your project? Let me know here.” + form (name, email, message) + attach + send
-- **Footer** — Logo, “Thanks for scrolling, that’s all folks.”, LinkedIn + email icons
 
 ## Run locally
 
