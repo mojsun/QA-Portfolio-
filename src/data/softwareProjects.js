@@ -2,6 +2,7 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "appistry",
     title: "Appistry",
+    type: "Front-end Project",
     tagline: "Designing perfect website",
     desc: "Platform to help individuals and businesses bring digital visions to life. Hero section, metrics, classes CTA, and client testimonials. Deployed on Netlify.",
     techs: ["HTML", "CSS", "Bootstrap", "Netlify"],
@@ -12,6 +13,7 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "planthora",
     title: "Planthora",
+    type: "Front-end Project",
     tagline: "Make your home green",
     desc: "Plant e-commerce and landing page. Clean, nature-inspired layout with product features, sustainability focus, and sign-up CTA. Deployed on Vercel.",
     techs: ["HTML", "CSS", "JavaScript", "Vercel"],
@@ -22,7 +24,9 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "elixderm",
     title: "Elixderm",
+    type: "Full-Stack Project",
     tagline: "For beauty brands thinking bigger",
+
     desc: "Boutique manufacturing for indie beauty brands. Hero with bold headline on organic imagery, services, products, and Get a Quote CTA.",
     techs: ["Sanity", "Typescript", "Next.js"],
     github: null,
@@ -32,6 +36,7 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "foodination",
     title: "Foodination",
+    type: "Front-end Project",
     tagline: "front end of food website",
     desc: "Next project. Description and links will be added here.",
     techs: ["HTML", "CSS", "Javascript", "scss"],
@@ -42,6 +47,7 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "soul-in-color",
     title: "Soul in Colour",
+    type: "Full-Stack Project",
     tagline: "Art gatherings and workshops",
     desc: "Website for watercolour workshop and events. Hero, upcoming events, gallery, and ticket links. Next.js app deployed on Vercel.",
     techs: ["Vercel", "TypeScript", "JavaScript", "CSS"],
@@ -52,6 +58,7 @@ export const SOFTWARE_PROJECTS = [
   {
     id: "getaway-travel-app",
     title: "GetAway Travel App",
+    type: "Full-Stack Project",
     tagline: "Full‑stack travel packages & booking",
     desc: "MERN + GraphQL travel agency app where users can browse curated packages, filter by region, manage a cart, checkout with Stripe, and view bookings in a personal dashboard. Deployed on Heroku with MongoDB Atlas.",
     techs: [
