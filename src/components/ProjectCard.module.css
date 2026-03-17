@@ -91,6 +91,13 @@
   line-height: 1.25;
 }
 
+.type {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
 .tagline {
   font-size: 0.75rem;
   color: var(--text-muted);

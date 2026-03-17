@@ -19,7 +19,7 @@ function ExternalIcon() {
 }
 
 export default function ProjectCard({ project, variant = 'default' }) {
-  const { title, tagline, desc, techs = [], github, external } = project
+  const { title, type, tagline, desc, techs = [], github, external } = project
   const hasLinks = github || external
   const isPlaceholder = !github && !external
 
@@ -45,6 +45,7 @@ export default function ProjectCard({ project, variant = 'default' }) {
           <span className={styles.featuredTag}>Featured Project</span>
         )}
         <h3 className={styles.title}>{title}</h3>
+        {type && <p className={styles.type}>{type}</p>}
         {tagline && <p className={styles.tagline}>{tagline}</p>}
         <div className={styles.descBox}>
           <p className={styles.desc}>{desc}</p>
