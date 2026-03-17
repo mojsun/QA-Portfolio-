@@ -15,6 +15,10 @@
   box-shadow: 0 12px 40px -12px rgba(232, 93, 4, 0.35), 0 0 0 1px rgba(232, 93, 4, 0.15);
 }
 
+.cardClickable {
+  cursor: pointer;
+}
+
 /* Visual area – photo on top (compact so 4 cards fit on screen) */
 .visual {
   position: relative;

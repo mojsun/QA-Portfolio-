@@ -24,7 +24,20 @@ export default function ProjectCard({ project, variant = 'default' }) {
   const isPlaceholder = !github && !external
 
   return (
-    <article className={`${styles.card} ${variant === 'featured' ? styles.featured : ''}`}>
+    <article
+      className={`${styles.card} ${
+        external ? styles.cardClickable : ''
+      } ${variant === 'featured' ? styles.featured : ''}`}
+      onClick={
+        external
+          ? () => {
+              window.open(external, '_blank', 'noopener,noreferrer')
+            }
+          : undefined
+      }
+      role={external ? 'button' : undefined}
+      tabIndex={external ? 0 : undefined}
+    >
       <div className={styles.visual}>
         <div className={styles.visualInner}>
           {project.visualLabel && (
@@ -66,6 +79,7 @@ export default function ProjectCard({ project, variant = 'default' }) {
                 rel="noopener noreferrer"
                 className={styles.link}
                 aria-label="GitHub repository"
+                onClick={(e) => e.stopPropagation()}
               >
                 <GitHubIcon />
               </a>
@@ -77,6 +91,7 @@ export default function ProjectCard({ project, variant = 'default' }) {
                 rel="noopener noreferrer"
                 className={`${styles.link} ${styles.linkExternal}`}
                 aria-label="View live site"
+                onClick={(e) => e.stopPropagation()}
               >
                 <ExternalIcon />
               </a>
