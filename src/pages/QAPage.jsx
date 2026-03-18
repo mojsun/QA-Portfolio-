@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import ProjectCard from '../components/ProjectCard'
@@ -5,6 +6,10 @@ import { QA_PROJECTS } from '../data/qaProjects'
 import styles from './GridPage.module.css'
 
 export default function QAPage() {
+  useEffect(() => {
+    document.title = 'QA Automation Projects | Moji Shahi'
+  }, [])
+
   return (
     <>
       <Header />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './TypingHeading.module.css'
 
-const TEXT = "Hi, I'm Moji Shahi"
+const TEXT = "Hi, I'm Moji Shahi — QA Automation Engineer"
 const NAME = 'Moji Shahi'
 const NAME_START = TEXT.indexOf(NAME)
 const NAME_END = NAME_START + NAME.length

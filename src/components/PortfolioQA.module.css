@@ -40,18 +40,40 @@
   margin-bottom: 1rem;
 }
 
-.exploreMore {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--accent-gold);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.exploreMore:hover {
-  text-decoration: underline;
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.primaryCta {
+  background: var(--accent);
+  color: #050308;
+}
+
+.secondaryCta {
+  border-color: var(--line);
+  color: var(--text-muted);
+}
+
+.primaryCta:hover,
+.secondaryCta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .grid {

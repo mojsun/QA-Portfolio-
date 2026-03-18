@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import ProjectCard from '../components/ProjectCard'
@@ -5,6 +6,10 @@ import { SOFTWARE_PROJECTS } from '../data/softwareProjects'
 import styles from './GridPage.module.css'
 
 export default function SoftwarePage() {
+  useEffect(() => {
+    document.title = 'Software Projects | Moji Shahi'
+  }, [])
+
   return (
     <>
       <Header />

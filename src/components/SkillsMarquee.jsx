@@ -1,65 +1,67 @@
 import styles from './SkillsMarquee.module.css'
 
-const qaSkills = [
-  { label: 'Python', big: true },
-  { label: 'SQL', big: false },
-  { label: 'Selenium', big: true },
-  { label: 'API testing', big: false },
-  { label: 'JavaScript', big: true },
-  { label: 'CI/CD', big: false },
-  { label: 'Pytest', big: true },
-  { label: 'Node.js', big: false },
-  { label: 'Cypress', big: true },
-  { label: 'UI testing', big: false },
-  { label: 'Locust', big: false },
-]
-
-const softwareSkills = [
-  { label: 'React', big: true },
-  { label: 'TypeScript', big: false },
-  { label: 'Node.js', big: true },
-  { label: 'Tailwind CSS', big: false },
-  { label: 'Express', big: true },
-  { label: 'Bootstrap', big: false },
-  { label: 'MongoDB', big: true },
-  { label: 'Next.js', big: false },
-  { label: 'jQuery', big: false },
-  { label: 'GraphQL', big: false },
-]
-
-function Line({ items, label, direction }) {
-  const dirClass = direction === 'rtl' ? styles.rightToLeft : styles.leftToRight
-
-  return (
-    <div className={`${styles.line} ${dirClass}`}>
-      <div className={styles.track}>
-        {[...items, ...items].map((item, index) => (
-          <span
-            key={`${item.label}-${index}`}
-            className={`${styles.item} ${item.big ? styles.itemBig : ''}`}
-          >
-            {index % items.length === 0 && (
-              <span className={styles.groupLabel}>{label}</span>
-            )}
-            <span>{item.label}</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 export default function SkillsMarquee() {
   return (
     <section className={styles.section} id="skills">
       <div className={styles.inner}>
-        <h2 className={styles.heading}>Skills</h2>
-        <div className={styles.lines}>
-          <Line items={qaSkills} label="QA SKILLS" direction="ltr" />
-          <Line items={softwareSkills} label="SOFTWARE SKILLS" direction="rtl" />
+        <div className={styles.headerRow}>
+          <div className={styles.label}>— Skills</div>
+          <h2 className={styles.heading}>QA-focused technical stack</h2>
+          <p className={styles.lead}>
+            A focused skill set for UI, API, and end-to-end automation, plus the tools I use to
+            integrate tests into real delivery pipelines.
+          </p>
+        </div>
+        <div className={styles.grid}>
+          <div className={styles.group}>
+            <h3 className={styles.groupTitle}>Automation</h3>
+            <ul className={styles.list}>
+              <li>Selenium</li>
+              <li>Cypress</li>
+              <li>PyTest</li>
+              <li>Cucumber / Behave</li>
+              <li>Page Object Model (POM)</li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h3 className={styles.groupTitle}>Languages</h3>
+            <ul className={styles.list}>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h3 className={styles.groupTitle}>API &amp; Data</h3>
+            <ul className={styles.list}>
+              <li>Postman</li>
+              <li>REST APIs</li>
+              <li>SQL</li>
+              <li>Python Requests</li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h3 className={styles.groupTitle}>CI/CD &amp; Tools</h3>
+            <ul className={styles.list}>
+              <li>GitHub Actions</li>
+              <li>Jenkins</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>Jira &amp; Zephyr</li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h3 className={styles.groupTitle}>Cloud &amp; Practices</h3>
+            <ul className={styles.list}>
+              <li>AWS</li>
+              <li>Agile / Scrum</li>
+              <li>Test planning &amp; reporting</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
 

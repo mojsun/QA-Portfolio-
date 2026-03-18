@@ -17,8 +17,12 @@ export default function App() {
             </>
           }
         />
+        {/* QA projects – new recruiter-friendly URL, old path kept for compatibility */}
         <Route path="/qa" element={<QAPage />} />
+        <Route path="/qa-projects" element={<QAPage />} />
+        {/* Software projects – new recruiter-friendly URL, old path kept for compatibility */}
         <Route path="/software" element={<SoftwarePage />} />
+        <Route path="/software-projects" element={<SoftwarePage />} />
       </Routes>
     </>
   )

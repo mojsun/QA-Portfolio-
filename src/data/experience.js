@@ -6,10 +6,9 @@ export const EXPERIENCE = [
     roleSub: 'Elixderm (Remote)',
     duration: 'Jul 2025 – Present',
     points: [
-      'Executed functional and regression testing prior to production releases.',
-      'Designed structured test cases and tracked defects in JIRA through full lifecycle.',
-      'Collaborated with developers to validate requirements and feature behavior.',
-      'Conducted pre-release validation to ensure production stability.',
+      'Planned and executed functional, regression, and exploratory testing prior to production releases.',
+      'Designed structured test cases, logged defects in Jira, and tracked them through to verified fixes.',
+      'Partnered with developers and product to clarify requirements and validate feature behaviour against acceptance criteria.',
     ],
   },
   {

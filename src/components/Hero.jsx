@@ -43,13 +43,27 @@ export default function Hero() {
   return (
     <main className={styles.main}>
       <section className={styles.about} id="home">
-        <div className={styles.label}>About Me</div>
+        <div className={styles.label}>QA Automation Engineer / QA Analyst</div>
         <TypingHeading />
         <p className={styles.text}>
-          QA Engineer specializing in UI, API, and hybrid test automation using Selenium, Cypress, and Python. Strong background in both QA and web development with hands-on experience building and testing scalable web applications.
+          I build reliable UI and API automation frameworks using Selenium, Cypress, and Python to
+          improve software quality and support faster, safer releases.
         </p>
-        <div className={styles.readMore}>
-          <a href="#portfolio">View projects →</a>
+        <div className={styles.highlightsRow}>
+          <span className={styles.badge}>Open to QA Automation / QA Analyst roles in Toronto</span>
+          <ul className={styles.highlights}>
+            <li>UI &amp; API automation</li>
+            <li>CI/CD testing</li>
+            <li>Manual + automation QA</li>
+          </ul>
+        </div>
+        <div className={styles.ctas}>
+          <Link to="/qa-projects" className={styles.primaryCta}>
+            View QA projects
+          </Link>
+          <Link to="/software-projects" className={styles.secondaryCta}>
+            View software projects
+          </Link>
         </div>
       </section>
 
@@ -78,10 +92,10 @@ export default function Hero() {
             <a href="/#skills">Skills</a>
           </li>
           <li data-section="portfolio" className={activeSection === 'portfolio' ? styles.navItemActive : ''}>
-            <Link to="/qa">QA Project</Link>
+            <Link to="/qa-projects">QA Projects</Link>
           </li>
           <li data-section="software" className={activeSection === 'software' ? styles.navItemActive : ''}>
-            <Link to="/software">Software Project</Link>
+            <Link to="/software-projects">Software Projects</Link>
           </li>
           <li data-section="get-in-touch" className={activeSection === 'get-in-touch' ? styles.navItemActive : ''}>
             <a href="/#get-in-touch">Contact</a>

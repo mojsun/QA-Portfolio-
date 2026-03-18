@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import Hero from '../components/Hero'
 import Experience from '../components/Experience'
 import SkillsMarquee from '../components/SkillsMarquee'
+import QAWorkflow from '../components/QAWorkflow'
+import ImpactStats from '../components/ImpactStats'
 import PortfolioQA from '../components/PortfolioQA'
 import SectionDivider from '../components/SectionDivider'
 import PortfolioSoftware from '../components/PortfolioSoftware'
@@ -11,6 +13,8 @@ import styles from './HomePage.module.css'
 
 export default function HomePage() {
   useEffect(() => {
+    document.title = 'Moji Shahi | QA Automation Engineer'
+
     const nodes = document.querySelectorAll('[data-animate]')
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,6 +37,13 @@ export default function HomePage() {
       </div>
       <div className={styles.sectionAnimate} data-animate>
         <SkillsMarquee />
+      </div>
+      <div className={styles.sectionAnimate} data-animate>
+        {/* QA mindset and impact, to quickly build recruiter trust */}
+        <QAWorkflow />
+      </div>
+      <div className={styles.sectionAnimate} data-animate>
+        <ImpactStats />
       </div>
       <div className={styles.sectionAnimate} data-animate>
         <PortfolioQA />
