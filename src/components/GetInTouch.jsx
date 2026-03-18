@@ -1,7 +1,7 @@
 import styles from './GetInTouch.module.css'
 
 const EMAIL = 'm.khoradhahi7@gmail.com'
-const LINKEDIN = 'https://www.linkedin.com/in/mojsun'
+const LINKEDIN = 'https://www.linkedin.com/in/m-khorashahi/'
 const GITHUB = 'https://github.com/mojsun'
 const RESUME = '/assets/Moji-Shahi-CV.pdf'
 
